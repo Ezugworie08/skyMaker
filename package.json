@@ -1,0 +1,33 @@
+{
+    "name": "stevemaker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build-client": "webpack",
+        "build-client-watch": "webpack -w",
+        "start": "node server",
+        "start-dev": "NODE_ENV='development' npm run build-client-watch & NODE_ENV='development' npm run start-server",
+        "start-server": "nodemon server -e html,js,scss --ignore public --ignore client",
+        "test": "NODE_ENV='test' mocha \"./server/**/*.spec.js\" \"./client/**/*.spec.js\" \"./script/**/*.spec.js\" --require @babel/polyfill --require @babel/register"
+      },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.4",
+        "morgan": "^1.9.1",
+        "path": "^0.12.7",
+        "react": "^16.8.1",
+        "react-dom": "^16.8.1",
+        "react-router-dom": "^4.3.1"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.3.1",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.5",
+        "webpack": "^4.29.3",
+        "webpack-cli": "^3.2.3"
+    }
+}
